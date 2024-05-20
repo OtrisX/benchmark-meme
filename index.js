@@ -24,8 +24,13 @@ app.get('/', (req, res) => {
                 return;
                 }
 
-                const quantidadeEntradas = rows.length;
-                res.json({ message: 'Dados retornados com sucesso!', quantidadeEntradas});
+                let count = 0;
+
+                rows.forEach(row => {
+                  count++;
+                })
+
+                res.json({ message: 'Dados retornados com sucesso!', count});
         });
 });
 
